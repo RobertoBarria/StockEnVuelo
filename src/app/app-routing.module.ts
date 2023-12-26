@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NoIngresadoGuard } from './no-ingresado.guard';
+import { IngresadoGuard } from './ingresado.guard';
 
 const routes: Routes = [
   {
@@ -14,12 +16,20 @@ const routes: Routes = [
   
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate:[NoIngresadoGuard]
   },
   {
     path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule),
+    canActivate:[IngresadoGuard]
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate:[NoIngresadoGuard]
   }
+
 ];
 
 @NgModule({
