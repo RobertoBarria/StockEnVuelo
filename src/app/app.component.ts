@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public appPages = [
     { title: 'Login', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Productos', url: '/productos', icon: 'paper-plane' },
-    { title: 'Registro', url: '/folder/favorites', icon: 'heart' },
+    { title: 'productos', url: 'productos', icon: 'heart' },
     { title: 'Archived', url: '/folder/archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/spam', icon: 'warning' },
